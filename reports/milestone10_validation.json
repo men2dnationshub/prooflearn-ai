@@ -1,0 +1,27 @@
+{
+  "application_version": "0.10.0",
+  "validation_status": "PROTOTYPE_VALIDATED",
+  "production_ready": false,
+  "automated_tests": {
+    "passed": 82,
+    "failed": 0
+  },
+  "validated_areas": [
+    "document extraction",
+    "writing feature analysis",
+    "training dataset governance",
+    "baseline model pipeline",
+    "risk engine safeguards",
+    "passage analysis",
+    "proof of learning",
+    "multipage interface startup",
+    "end to end workflow",
+    "DOCX compression safety"
+  ],
+  "production_blockers": [
+    "No representative authorised training corpus is bundled.",
+    "No independently validated production model is approved.",
+    "Institutional privacy, accessibility and academic-integrity review is pending.",
+    "A real educator pilot has not yet been completed."
+  ]
+}
