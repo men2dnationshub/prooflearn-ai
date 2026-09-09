@@ -1,7 +1,6 @@
 import streamlit as st
 from modules.writing_assistant import assistance_declaration, improve_writing, writing_revision_json
 from ui.shared import ReportItem, apply_brand, initialise_state, register_report, render_sidebar_status
-st.set_page_config(page_title="Writing Assistant", page_icon="✍️", layout="wide")
 initialise_state(); apply_brand(); render_sidebar_status(); st.title("Responsible Writing Assistant")
 st.warning("This tool improves writing quality. It is not designed to bypass AI detection or conceal academic misconduct.")
 active = st.session_state.get("active_document"); default_text = active.text if active else ""

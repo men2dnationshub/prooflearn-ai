@@ -3,7 +3,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / "app.py", *sorted((ROOT / "pages").glob("*.py"))]
+PAGES = [ROOT / "app.py", *sorted((ROOT / "pages").glob("*.py")), *sorted((ROOT / "views").glob("*.py"))]
 
 @pytest.mark.parametrize("page", PAGES, ids=lambda page: page.name)
 def test_page_starts_without_exception(page):

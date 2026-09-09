@@ -6,9 +6,9 @@ ProofLearn AI is an education focused application that will help educators
 identify authorship concerns, inspect explainable writing indicators and verify
 whether students understand submitted work.
 
-## Milestone 12 status
+## Version 0.13 status
 
-ProofLearn AI v0.12 is packaged as a **deployable controlled prototype**. It now includes pinned runtime dependencies, automated CI, deployment and release gates, Streamlit Community Cloud instructions, secret-handling safeguards, a smoke-test checklist, and an operations runbook.
+ProofLearn AI v0.13 is a post-deployment polish release. It adds named Home navigation, stronger dashboard and sidebar branding, a fictional sample assignment, prominent privacy guidance, and clearer empty-state instructions.
 
 Passing the deployment gate means the software can be demonstrated. It does **not** mean the detector is scientifically validated or approved for production decisions.
 

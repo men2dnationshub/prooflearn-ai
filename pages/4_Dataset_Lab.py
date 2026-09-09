@@ -4,7 +4,6 @@ import streamlit as st
 from modules.authorship_model import ModelTrainingError, evaluation_json, train_baseline
 from modules.dataset_manager import empty_dataset_template, validate_dataset
 from ui.shared import ReportItem, apply_brand, initialise_state, register_report, render_sidebar_status
-st.set_page_config(page_title="Dataset Lab", page_icon="🧪", layout="wide")
 initialise_state(); apply_brand(); render_sidebar_status(); st.title("Dataset Lab")
 buffer = BytesIO(); empty_dataset_template().to_csv(buffer, index=False); st.download_button("Download dataset template", buffer.getvalue(), "prooflearn_training_template.csv", "text/csv")
 uploaded = st.file_uploader("Upload authorised training CSV", type=["csv"])

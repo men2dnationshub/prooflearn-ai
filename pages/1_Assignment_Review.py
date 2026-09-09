@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 import streamlit as st
 from modules.authorship_model import predict_authorship
 from modules.document_reader import DocumentExtractionError, extract_document
@@ -7,14 +8,17 @@ from modules.passage_analyzer import analyse_passages, passage_analysis_json
 from modules.risk_engine import assess_review_risk, risk_assessment_json
 from ui.shared import ReportItem, apply_brand, clear_document_workspace, initialise_state, register_report, render_sidebar_status
 
-st.set_page_config(page_title="Assignment Review", page_icon="📄", layout="wide")
 initialise_state(); apply_brand(); render_sidebar_status(); st.title("Assignment Review")
+st.warning("Privacy notice: use anonymised or authorised documents. Do not upload confidential student records to this public prototype.")
 uploaded = st.file_uploader("Upload DOCX, PDF or TXT", type=["docx", "pdf", "txt"])
 if uploaded:
     try: st.session_state["active_document"] = extract_document(uploaded.getvalue(), uploaded.name)
     except DocumentExtractionError as error: st.error(str(error))
+if st.button("Try sample assignment", help="Loads a fictional assignment containing no personal information"):
+    sample_path = Path(__file__).resolve().parents[1] / "samples" / "sample_assignment.txt"
+    st.session_state["active_document"] = extract_document(sample_path.read_bytes(), sample_path.name)
 document = st.session_state.get("active_document")
-if not document: st.info("Upload an assignment to begin."); st.stop()
+if not document: st.info("Upload an anonymised assignment or select Try sample assignment to explore the workflow."); st.stop()
 analysis = analyse_writing(document.text)
 register_report(ReportItem("text", "Extracted text", f"{document.filename}_extracted.txt", "text/plain", document.text, "Assignment"))
 register_report(ReportItem("analysis", "Writing analysis", f"{document.filename}_analysis.json", "application/json", json.dumps(analysis.to_dict(), indent=2), "Assignment"))

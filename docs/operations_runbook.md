@@ -2,7 +2,7 @@
 
 ## Intended use
 
-ProofLearn AI v0.12 may be used for demonstrations and controlled, consented evaluation. It must not autonomously accuse, grade, penalise, or make an academic-misconduct determination.
+ProofLearn AI v0.13 may be used for demonstrations and controlled, consented evaluation. It must not autonomously accuse, grade, penalise, or make an academic-misconduct determination.
 
 ## Start-up checks
 

@@ -1,6 +1,6 @@
 # ProofLearn AI deployment guide
 
-This guide publishes v0.12 as a **controlled demonstration prototype**. A successful deployment does not make its authorship outputs scientifically validated or suitable for disciplinary decisions.
+This guide publishes v0.13 as a **controlled demonstration prototype**. A successful deployment does not make its authorship outputs scientifically validated or suitable for disciplinary decisions.
 
 ## Before deployment
 
@@ -16,12 +16,13 @@ This guide publishes v0.12 as a **controlled demonstration prototype**. A succes
 2. Sign in to Streamlit Community Cloud and choose **Create app**.
 3. Select the GitHub repository, the `main` branch, and `app.py` as the entry point.
 4. In advanced settings, select Python 3.12.
-5. No secrets are required for v0.12. If a future release uses an API key, store it in the platform's secret settings—never in Git.
+5. No secrets are required for v0.13. If a future release uses an API key, store it in the platform's secret settings—never in Git.
 6. Deploy and wait for dependency installation and application startup.
 
 ## Post-deployment smoke test
 
-- Home page loads and shows version 0.12.0.
+- Home page loads and shows version 0.13.0.
+- Home appears by name in the navigation and the safe sample assignment loads.
 - Assignment Review accepts a safe TXT, DOCX, and PDF sample.
 - Writing statistics and passage indicators render.
 - Dataset Lab validates a sample dataset and can train the experimental baseline when both classes are present.

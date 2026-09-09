@@ -2,7 +2,6 @@ import streamlit as st
 from modules.question_generator import generate_verification_questions, score_verification, verification_report_json
 from ui.shared import ReportItem, apply_brand, initialise_state, register_report, render_sidebar_status
 
-st.set_page_config(page_title="Proof of Learning", page_icon="🎓", layout="wide")
 initialise_state(); apply_brand(); render_sidebar_status(); st.title("Proof of Learning")
 document = st.session_state.get("active_document")
 if not document: st.info("Upload an assignment on Assignment Review first."); st.stop()
